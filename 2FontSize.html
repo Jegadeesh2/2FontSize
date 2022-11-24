@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2FontSize</title>
+  </head>
+  <body>
+    <!-- HTML -->
+
+    <div class="container">
+      <div id="content">
+        <input type="text" id="text" placeholder="Type something to resize" />
+      </div>
+      <br />
+      <button id="plus-btn" onclick="increase()">+</button>
+      <button id="minus-btn" onclick="decrease()">-</button>
+    </div>
+  </body>
+
+  <!-- CSS -->
+
+  <style>
+    body{
+      background-color: lightgray;
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #content {
+      
+      font-size: auto;
+    }
+    button {
+      width: 5rem;
+      height: 3rem;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 1.5rem;
+      padding:4px;
+      border: 3px solid black;
+      border-radius: 10px;
+      text-align: center;
+    }
+    #text{
+      padding: 1rem;
+      min-width: 10rem;
+      min-height: 1.5rem;
+      max-width: 80rem;
+      max-height: 80rem;
+      font-size: 20px;
+      border: 4px solid black;
+      border-radius: 8px;
+    }
+  </style>
+
+  <!-- SCRIPT -->
+
+  <script>
+    //Elements
+    let textEle = document.getElementById("text");
+    let contentEle = document.getElementById("content");
+    let size=20;
+    //Functions
+    function increase() {
+      size=size+2
+      textEle.style.fontSize = `${size}px`;
+    }
+    function decrease(){
+      size=size-2
+      textEle.style.fontSize = `${size}px`;
+    }
+  </script>
+</html>
